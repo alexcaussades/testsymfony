@@ -21,7 +21,7 @@
          <div class="row">
              <div class="col-2"> {{aliment.nom}}
                 <br>
-               <img class="image" id="cardperso" src="/image/{{aliment.image}}" alt="">
+               <img class="image" id="cardperso" src="{{asset('image/'~aliment.image)}}" alt="">
                
                <a class="btn btn-secondary" href="{{path('admin_aliment_mod',{'id': aliment.id})}}">Modifier</a>
                
