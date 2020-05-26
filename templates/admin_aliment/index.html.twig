@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block montitre %} (admin) Hello Tout Le Monde{% endblock %}
+
+{% block body %}
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">
+                <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+  
+        <div class="container">
+            <a class="btn btn-danger"href="{{path('admin_aliment_creat')}}">Ajouter</a>
+         
+            <a class="btn btn-primary" href="{{path('alimentsParCalorie',{'calorie':50})}}">test aliments</a>
+        <div class="row" id="cardperso">
+         {% for aliment in aliments %}
+         <div class="row">
+             <div class="col-2"> {{aliment.nom}}
+                <br>
+               <img class="image" id="cardperso" src="/image/{{aliment.image}}" alt="">
+               
+               <a class="btn btn-secondary" href="{{path('admin_aliment_mod',{'id': aliment.id})}}">Modifier</a>
+               
+               <form action="{{path('admin_aliment_supp',{'id': aliment.id})}}" method="post">
+                   <input type="hidden" name="_method" value="delect">
+                   <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ aliment.id)}}">
+                  <input type="submit" class="btn btn-warning" value="Supprimer">
+               </form>
+
+             </div>
+         </div>
+            
+         {% endfor %}
+        </div></div>
+
+    {% endblock %}
+

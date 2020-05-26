@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block montitre %} Hello Tout Le Monde{% endblock %}
+
+{% block body %}
+  
+        <div class="container">
+            <a href="{{path('alimentsParCalorie',{'calorie':50})}}">test aliments</a>
+        <div class="row" id="cardperso">
+         {% for aliment in aliments %}
+         <div class="row">
+             <div class="col-2"> {{aliment.nom}}
+                <br>
+               <img class="image" id="cardperso" src="/image/{{aliment.image}}" alt="">
+             </div>
+         </div>
+            
+         {% endfor %}
+        </div></div>
+
+    {% endblock %}

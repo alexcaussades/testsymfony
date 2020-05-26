@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block montitre %} (Modif admin) Hello Tout Le Monde{% endblock %}
+
+{% block body %}
+  <div class="container">
+      {{form_start(form)}}
+            {{form_widget(form)}}
+            <input type="submit" class="btn btn-primary">
+        {{form_end(form)}}
+            
+  </div>
+        
+{% endblock %}
+

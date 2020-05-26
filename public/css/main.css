@@ -1,0 +1,31 @@
+.image{
+    max-width: 110px;
+    max-height: 110px;
+    margin-right: 50px;
+}
+
+body{
+    color: darkgoldenrod;
+    background-color: black;
+}
+
+#cardperso{
+    margin: 10px, 50px, 10px, 10px;
+
+}
+
+.btn :hover{
+    color: whitesmoke;
+}
+
+.btn :visited{
+    color: whitesmoke;
+}
+
+.btn :link{
+    color: whitesmoke;
+}
+
+.btn :active{
+    color: whitesmoke;
+}
